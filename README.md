@@ -26,7 +26,7 @@ This application provides real-time data on various cryptocurrencies using the C
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/eladjak/cryptocurrency-app.git
+    git clone https:///github.com/eladjak/Jquery-AJAX---Cryptocurrency-API-Tracking-Application-Project.git
     ```
 
 2. Navigate to the project directory:
@@ -60,4 +60,4 @@ Elad Ya'akobovitch, a 37-year-old full-stack developer with certification from J
 - GitHub: [github.com/eladjak](https://github.com/eladjak)
 - Phone: +972 52-542-7474
 
-For more details, setup instructions, and contribution guidelines, please visit the [GitHub repository](https://github.com/eladjak/cryptocurrency-app).
+For more details, setup instructions, and contribution guidelines, please visit the [GitHub repository](https://https://github.com/eladjak/Jquery-AJAX---Cryptocurrency-API-Tracking-Application-Project).
