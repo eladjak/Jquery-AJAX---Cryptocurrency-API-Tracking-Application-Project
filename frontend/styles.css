@@ -1,0 +1,524 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Video/Image background styles */
+#bgContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    animation: slowMotion 60s linear infinite;
+}
+
+@keyframes slowMotion {
+    0% {
+        transform: translateX(-50%) translateY(-50%) scale(1.1);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) scale(1.1);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+/* Parallax container styles */
+.parallax-container {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.parallax-container h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+/* Updated Kryptonite banner styles */
+#cryptoLogo {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-image: url('images/kryptonite-png-3.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Shine animation for the logo */
+.shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {transform: translateY(-100%) translateX(-100%);}
+    100% {transform: translateY(100%) translateX(100%);}
+}
+
+/* Main content styles */
+#mainContent {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Updated coin card styles */
+.coin-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.coin-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.coin-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.coin-logo.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Live report chart styles */
+#liveReportChart, #bitcoinChart {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+/* Coin management modal styles */
+.coin-management-modal .swal2-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.coin-management .selected-coin-item {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.coin-management .coin-name {
+    font-weight: bold;
+}
+
+.coin-management .remove-coin-btn {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Main content transition styles */
+#mainContent {
+    transition: opacity 0.3s ease;
+}
+
+#mainContent.fade-out {
+    opacity: 0;
+}
+
+#mainContent.fade-in {
+    opacity: 1;
+}
+
+/* Navigation styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    position: relative;
+    color: #333 !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Page transition animation */
+.page-transition {
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Error message styles */
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+/* Loading spinner styles */
+#loadingSpinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Search container styles */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-container .mdl-textfield__input {
+    color: rgba(0, 0, 0, 0.87);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+}
+
+.search-container .mdl-textfield.is-focused .mdl-textfield__input {
+    border-bottom: 2px solid rgb(63,81,181);
+}
+
+.search-container .mdl-textfield__label {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.search-container .mdl-textfield.is-focused .mdl-textfield__label {
+    color: rgb(63,81,181);
+}
+
+/* Dropdown styles */
+#searchResults {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#searchResults .dropdown-item {
+    padding: 10px 15px;
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+#searchResults .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#searchResults .dropdown-item:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar styles for webkit browsers */
+#searchResults::-webkit-scrollbar {
+    width: 8px;
+}
+
+#searchResults::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#searchResults::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#searchResults::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* No results message */
+#searchResults .no-results {
+    padding: 10px 15px;
+    color: rgba(0, 0, 0, 0.54);
+    font-style: italic;
+}
+
+/* Updated styles for Reports Page */
+#selectedCoinsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#selectedCoinsList .coin-card {
+    flex: 0 1 calc(25% - 20px);
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#selectedCoinsList .card {
+    background-color: transparent;
+    border: none;
+}
+
+#selectedCoinsList .card-body {
+    padding: 0;
+}
+
+#selectedCoinsList .coin-logo {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    #selectedCoinsList .coin-card {
+        flex: 0 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    #selectedCoinsList .coin-card {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    #selectedCoinsList .coin-card {
+        flex: 0 1 100%;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .parallax-container {
+        height: 200px;
+    }
+
+    .parallax-container h1 {
+        font-size: 2rem;
+    }
+
+    #cryptoLogo {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .parallax-container {
+        height: 150px;
+    }
+
+    .parallax-container h1 {
+        font-size: 1.5rem;
+    }
+
+    #cryptoLogo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* SweetAlert coin management styles */
+.coin-management {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.coin-card-modal {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.coin-card-modal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.coin-card-modal img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.coin-card-modal .coin-name {
+    font-size: 14px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.coin-card-modal .remove-coin-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(0.8);
+}
+
+.coin-card-modal:hover .remove-coin-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.swal2-content {
+    padding-top: 20px;
+}
+
+.swal2-title {
+    font-size: 24px !important;
+}
+
+.swal2-html-container {
+    margin-top: 1em !important;
+}
+
+/* About page animation styles */
+.about-content {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content > * {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about-content.show > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-image {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.profile-image.show {
+    opacity: 1;
+    transform: scale(1);
+}
