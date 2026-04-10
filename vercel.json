@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/api/coins/markets", "destination": "/api/coins-markets" },
+    { "source": "/api/coins/:id/market_chart", "destination": "/api/coins/[id]/market_chart" },
+    { "source": "/api/coins/:id", "destination": "/api/coins/[id]" }
+  ],
+  "outputDirectory": "frontend"
+}

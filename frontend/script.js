@@ -126,7 +126,7 @@ function fetchCoinsWithRetry(retryCount = 0) {
     }
 
     $.ajax({
-        url: 'http://localhost:54187/api/coins/markets',
+        url: '/api/coins/markets',
         method: 'GET',
         data: {
             vs_currency: 'usd',
@@ -489,7 +489,7 @@ function initBitcoinChart() {
 
     // Fetch Bitcoin price data for the last 30 days
     $.ajax({
-        url: 'http://localhost:54187/api/coins/bitcoin/market_chart',
+        url: '/api/coins/bitcoin/market_chart',
         method: 'GET',
         data: {
             vs_currency: 'usd',
@@ -721,7 +721,7 @@ function fetchMoreInfo(coinId, infoContent) {
     }
 
     $.ajax({
-        url: `http://localhost:54187/api/coins/${coinId}`,
+        url: `/api/coins/${coinId}`,
         method: 'GET',
         success: function(data) {
             console.log(`Received more info for coin ${coinId}`);
