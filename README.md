@@ -61,3 +61,9 @@ Elad Ya'akobovitch, a 37-year-old full-stack developer with certification from J
 - Phone: +972 52-542-7474
 
 For more details, setup instructions, and contribution guidelines, please visit the [GitHub repository](https://https://github.com/eladjak/Jquery-AJAX---Cryptocurrency-API-Tracking-Application-Project).
+
+---
+
+⭐ If you find this useful, please star the repo!
+
+*[README בעברית](README.he.md)*
